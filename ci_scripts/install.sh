@@ -31,6 +31,17 @@ if [[ -v SCIPY_VERSION ]]; then
     conda install --yes scipy=$SCIPY_VERSION
 fi
 
+echo "########################################################"
+echo "conda env list"
+conda env list
+echo "########################################################"
+echo "conda list"
+conda list
+echo "########################################################"
+echo "which python"
+which python
+echo "########################################################"
+echo "python --version"
 python --version
 pip install -e '.[test]'
 python -c "import numpy; print('numpy %s' % numpy.__version__)"
@@ -52,3 +63,7 @@ fi
 # Install scikit-learn last to make sure the openml package installation works
 # from a clean environment without scikit-learn.
 pip install scikit-learn==$SKLEARN_VERSION
+
+echo "########################################################"
+echo "conda list"
+conda list
